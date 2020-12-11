@@ -19,7 +19,6 @@ export class ListPokemonComponent implements OnInit {
   }
 
   selectPokemon(pokemon: Pokemon): void{
-    alert('Vous avez sélectionée : ' + pokemon.name);
     //Passer en paramètre l'url de redirection + les paramètres éventuels de la route.
     const link = ['/pokemon',pokemon.id];
     this.router.navigate(link);
