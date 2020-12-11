@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Pokemon } from '../../pokemon';
-import {POKEMONS} from '../../shared/list.pokemons';
 import {ActivatedRoute} from '@angular/router';
 import {Router} from '@angular/router';
+import {PokemonsService} from '../pokemons.service'
 
 
 @Component({
@@ -15,16 +15,11 @@ export class DetailPokemonComponent implements OnInit {
   listOfPokemons: Pokemon[] = null;
   pokemonToDisplay: Pokemon = null;
 
-  constructor(private route: ActivatedRoute,private router: Router) { }
+  constructor(private route: ActivatedRoute,private router: Router,private pokemonsService: PokemonsService) { }
 
   ngOnInit(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.listOfPokemons = POKEMONS;
-    for (let i = 0; i < this.listOfPokemons.length; i++) {
-      if (this.listOfPokemons[i].id === id) {
-        this.pokemonToDisplay = this.listOfPokemons[i];
-      }
-    }
+    this.pokemonToDisplay = this.pokemonsService.getSinglePokemon(id);
   }
 
   retour(): void{
