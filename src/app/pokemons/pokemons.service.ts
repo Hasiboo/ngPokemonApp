@@ -31,5 +31,12 @@ export class PokemonsService {
     }
   }
 
+  /**
+  * Récupérer les types d'un pokémon
+  */
+  getPokemonTypes(): string[] {
+    return ['Plante','Feu','Eau','Insecte','Normal','Electrik','Poison','Fée','Vol'];
+  }
+
 
 }

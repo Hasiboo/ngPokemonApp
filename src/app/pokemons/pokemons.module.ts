@@ -5,7 +5,9 @@ import { DetailPokemonComponent } from '../pokemons/detail-pokemon/detail-pokemo
 import { BorderCardDirective } from '../shared/directives/border-card.directive';
 import { PokemonTypeColorPipe } from '../shared/pipes/pokemon-type-color.pipe';
 import {PokemonsService} from '../pokemons/pokemons.service';
-
+import { PokemonFormComponent } from './pokemon-form/pokemon-form.component';
+import { FormsModule} from '@angular/forms';
+import { PokemonEditComponent } from './pokemon-edit/pokemon-edit.component';
 
 
 @NgModule({
@@ -14,10 +16,13 @@ import {PokemonsService} from '../pokemons/pokemons.service';
     DetailPokemonComponent,
     BorderCardDirective,
     PokemonTypeColorPipe,
+    PokemonFormComponent,
+    PokemonEditComponent,
 
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   providers: [
     PokemonsService
