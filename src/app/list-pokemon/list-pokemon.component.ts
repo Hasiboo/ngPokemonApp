@@ -15,12 +15,12 @@ export class ListPokemonComponent implements OnInit {
   pokemons: Pokemon[];
 
   ngOnInit(): void {
-    this.pokemons = this.pokemonsService.getListPokemons();
+    this.pokemonsService.getListPokemons().subscribe(listPkm => this.pokemons = listPkm);
   }
 
   selectPokemon(pokemon: Pokemon): void{
     //Passer en paramètre l'url de redirection + les paramètres éventuels de la route.
-    const link = ['/pokemon',pokemon.id];
+    const link = ['/pokemon', pokemon.id];
     this.router.navigate(link);
   }
 

@@ -8,6 +8,7 @@ import {PokemonsService} from '../pokemons/pokemons.service';
 import { PokemonFormComponent } from './pokemon-form/pokemon-form.component';
 import { FormsModule} from '@angular/forms';
 import { PokemonEditComponent } from './pokemon-edit/pokemon-edit.component';
+import { SearchPokemonComponent } from './search-pokemon/search-pokemon.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { PokemonEditComponent } from './pokemon-edit/pokemon-edit.component';
     PokemonTypeColorPipe,
     PokemonFormComponent,
     PokemonEditComponent,
+    SearchPokemonComponent,
 
   ],
   imports: [
